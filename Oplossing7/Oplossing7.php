@@ -22,10 +22,11 @@ $omgekeerd = strrev($uitkomst);
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Untitled</title>
+        <title>Opdracht if elseif</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+    <h1>Opdracht if elseif</h1>
         <h2><?= $uitkomst ?></h2>
         <h2><?= $omgekeerd ?></h2>
         <script src="js/main.js"></script>
