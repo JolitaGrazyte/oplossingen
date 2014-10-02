@@ -12,9 +12,6 @@
     $dagToUpperSubstr = substr($dagToUpper, $laatsteA+1, strlen($deDag));
     $LowerA = $dagToUpperSub.$restToLower.$dagToUpperSubstr;
 
-
-
-
  ?>
 
 <html>
