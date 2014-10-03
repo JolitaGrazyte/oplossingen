@@ -18,8 +18,7 @@ $weken = floor($days / 7);
 $months = floor($seconds / (60 * 60 * 24 * 31));
 $years = floor($months/12);
 
-$toPrint = 'Jaren: '.$years.' Maanden: '.$months.' Weken: '.$weken.' Dagen: '.$days.' Uren: '.$H. ' Minuten: '.$i;
-
+$toPrint = "Jaren: ".$years." \n"." Maanden: ".$months." Weken: ".$weken." Dagen: ".$days." Uren: ".$H." Minuten: ".$i;
  ?>
 <html>
     <head>
@@ -36,6 +35,7 @@ $toPrint = 'Jaren: '.$years.' Maanden: '.$months.' Weken: '.$weken.' Dagen: '.$d
 
     <H2>Deel 2</H2>
         <H3><?= $toPrint ?></H3>
+        
         <script src="js/main.js"></script>
     </body>
 </html>
