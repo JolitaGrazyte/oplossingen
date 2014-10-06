@@ -75,7 +75,7 @@ launchAngryBird();
     <h1>Functies Gevorderd - Deel 2</h1>
     <h2>Text-based Angry Birds</h2>
     	<?php foreach ($record as $value): ?>
-    	<?php echo "<p>".$value."</p>" ?>
+    	<p><?php echo $value; ?></p>
     	<?php endforeach; ?>
         <script src="js/main.js"></script>
     </body>
