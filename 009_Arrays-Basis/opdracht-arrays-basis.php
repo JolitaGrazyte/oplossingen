@@ -23,6 +23,7 @@ $_voertuigen['luchtvoertuigen'] = array('vliegtuig', 'luchtballon');
 $getallen = array(1, 2, 3, 4, 5);
 $_getallen = array(5, 4, 3, 2, 1);
 $uitkomst = $getallen[0]*$getallen[1]*$getallen[2]*$getallen[3]*$getallen[4];
+//$uitkomst = array_product($getallen);
 $_uitkomst = array();
 
 for ($i=0; $i < 5; $i++) { 
@@ -40,7 +41,6 @@ $oneven = array();
   if($getallen[$key]%2 != 0) 
    array_push($oneven, $getallen[$key]);
 }    
- 
 
  ?>
     <head>
@@ -59,7 +59,7 @@ $oneven = array();
         <?=var_dump($_voertuigen) ?>
 
         <h2>Deel 2</h2>
-        <p>Som van de getallen uit array 1: <?= $uitkomst ?></p>
+        <p>Product van de getallen uit array 1: <?= $uitkomst ?></p>
         <p>Oneven:</p>
         <?=var_dump($oneven) ?>
         <p>De getallen van beide arrays met elkaar opgeteld:</p>
