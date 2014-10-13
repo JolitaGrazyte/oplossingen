@@ -1,0 +1,23 @@
+My interpretation for this quote is this: Copying another idea will make you a good designer, however, “stealing” an idea or concept from within another design and using it wisely (without blatant copying) will make you a great designer.
+
+Stealing an idea is hard - much harder than copying - you need to truly understand the concept to lift it from one place and move it into your design.
+
+Case Study: Stealing the Pyramids
+
+In a recent project, I was working with a team on a site for an Egyptian Tourism portal. They did not want a straight forward “Pyramids, Karnak, Pharaonic” style site that most people would go for... They wanted something modern, yet they wanted to keep an Egyptian identity that would literally say “this site is from Egypt”.
+
+It was a real challenge, but by going through the above methodology we came up with images like these:
+
+
+Now the client didn’t want cliché designs showing straight forward hieroglyphs or images of ancient Egyptian temples and stuff like that, but by looking at the images we started building on the idea that we can use some elements such as the slanted walls and the ancient Egyptian portals and how they would relate to the site being a portal to Egypt.
+
+The problem is that the only style that's unique to Egypt is Pharaoh-style. If we went with Arabian art, for example, it would not be unique to Egypt. If we show diving or beaches, it is not unique. If we go with any other style, it will not be unique to Egypt and that was a strict requirement.
+
+At the same time, we were told not to use clear Ancient Egyptian images or hieroglyphs as the client wanted to promote all types of Egyptian tourism, not just temples or pyramids. A tricky design brief, to be sure.
+
+In the end we came up with a sketch like this:
+
+
+We simply took part of the entrance “portal” pylons in Karnak temple, using only the slanted lines to identify the walls, the area in the middle was used to animate different images from Egypt and we used the left area for the logo and navigation while the whole right area was used for the content.
+
+It was a very simple concept, yet it fulfilled all the requirements. Such an idea would have been hard to come to mind if we had not watched the photos and images that came up from a simple “Egypt” search query.

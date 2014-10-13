@@ -42,16 +42,14 @@ function calculateHit(){
 	
 }
 
-function launchAngryBird(){
+function launchAngryBird($maximumThrows, $pigHealth){
 	static $count = 0;
-	global $maximumThrows;
-	global $pigHealth;
 	global $record;
 
 	if ($count < $maximumThrows) {
 		calculateHit();
 		++$count;
-		launchAngryBird();
+		launchAngryBird($maximumThrows, $pigHealth);
 	}
 	else{
 		
@@ -61,7 +59,7 @@ function launchAngryBird(){
 	}
 }
 
-launchAngryBird();
+launchAngryBird($maximumThrows, $pigHealth);
 
 ?>
     <head>
