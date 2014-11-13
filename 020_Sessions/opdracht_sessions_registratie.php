@@ -1,6 +1,8 @@
 <!doctype html>
 <?php   
-session_start();
+// if(session_status()!=PHP_SESSION_ACTIVE) session_start();
+session_start()
+var_dump($_SESSION);
 
 if (isset($_GET['session'])) 
     {
@@ -10,7 +12,11 @@ if (isset($_GET['session']))
             header('Location: opdracht_sessions_registratie.php');
         }
     }
-      
+
+         $email = isset($_SESSION['registratie']['email'])? $_SESSION['registratie']['email'] : '';
+         $name = isset($_SESSION['registratie']['name'])? $_SESSION['registratie']['name'] : '';
+    
+ 
  ?>
 <html>
     <head>
@@ -28,9 +34,9 @@ if (isset($_GET['session']))
         		 <fieldset>
         		 <ul>
         		     <li><label>email</label></li>
-        		     <li><input id="email" type="email" name="email" value="<?=$_SESSION['registratie']['email']; ?>" <?= ( isset( $_GET['focus'] ) && $_GET['focus'] == "email" ) ? 'autofocus' : '' ?> /></li>
+        		     <li><input id="email" type="email" name="email" value="<?=$email ?>" <?= ( isset( $_GET['focus'] ) && $_GET['focus'] == "email" ) ? 'autofocus' : '' ?> /></li>
         		     <li><label>name</label></li>
-        		     <li><input id="name" type="text" name="name" value="<?=$_SESSION['registratie']['name'];?>" <?= ( isset( $_GET['focus'] ) && $_GET['focus'] == "name" ) ? 'autofocus' : '' ?> /></li>
+        		     <li><input id="name" type="text" name="name" value="<?=$name ?>" <?= ( isset( $_GET['focus'] ) && $_GET['focus'] == "name" ) ? 'autofocus' : '' ?> /></li>
         		     <li><button id='submit' type="submit" name="submit">volgende</button></li>
         		 </ul>
                 </fieldset>

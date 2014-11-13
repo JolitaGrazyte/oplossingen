@@ -1,0 +1,14 @@
+    <div class="container">
+    	<h2>Nieuws</h2>
+    	<div class="wrapper">
+    	<section id='artkel'>
+    	<?php  foreach ($artikels as $value): ?>
+                <article class="artikel">
+                <h2><?=$value['title'] ?></h2>
+                <p class="text"><?=$value['text'] ?></p>
+                <span>Kernwoorden: </span><a href=""><?=$value['tags'] ?></a>
+                </article>
+        <?php endforeach; ?> 
+        </section>
+    	</div>
+    </div>

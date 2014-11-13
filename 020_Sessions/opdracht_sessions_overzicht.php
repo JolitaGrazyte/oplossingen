@@ -18,6 +18,9 @@ if (isset($_GET['session']))
         $_SESSION['adres']["gemeente"] = $_POST["gemeente"]; 
     } 
       
+      //$registratieArray[] = isset($_SESSION["registratie"])? $_SESSION["registratie"] : '';
+      //$adresArray[] = isset($_SESSION['adres'])? $_SESSION['adres'] : '';
+      // MOET NAMEN ARRAY NOG AANMAKEN
  ?>
 <html>
     <head>
@@ -25,7 +28,7 @@ if (isset($_GET['session']))
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Opdracht Session Overzicht</title>
-        <link rel="stylesheet" href="css/style.css">
+        <!-- <link rel="stylesheet" href="css/style.css"> -->
         
     </head>
     <body>
@@ -43,12 +46,14 @@ if (isset($_GET['session']))
                 <?php endforeach ?>            
                 
 
-                  <!--   <li>email: <?=$_SESSION['registratie']['email']; ?> <a href="opdracht_sessions_registratie.php?focus=email">wijzig</a></li>
-                    <li>nickname: <?=$_SESSION['registratie']['name']; ?> <a href="opdracht_sessions_registratie.php?focus=name">wijzig</a></li>
-                    <li>straat: <?=$_SESSION['adres']['straat']; ?> <a href="opdracht_sessions_adres.php?focus=straat">wijzig</a></li>
-                    <li>nummer: <?=$_SESSION['adres']['nummer']; ?> <a href="opdracht_sessions_adres.php?focus=nummer">wijzig</a></li>
-                    <li>gemeente: <?=$_SESSION['adres']['gemeente']; ?> <a href="opdracht_sessions_adres.php?focus=gemeente">wijzig</a></li>
-                    <li>postcode: <?=$_SESSION['adres']['postcode']; ?> <a href="opdracht_sessions_adres.php?focus=postcode">wijzig</a></li> -->
+            <!--    
+                <li>email: <?=$_SESSION['registratie']['email']; ?> <a href="opdracht_sessions_registratie.php?focus=email">wijzig</a></li>
+                <li>nickname: <?=$_SESSION['registratie']['name']; ?> <a href="opdracht_sessions_registratie.php?focus=name">wijzig</a></li>
+                <li>straat: <?=$_SESSION['adres']['straat']; ?> <a href="opdracht_sessions_adres.php?focus=straat">wijzig</a></li>
+                <li>nummer: <?=$_SESSION['adres']['nummer']; ?> <a href="opdracht_sessions_adres.php?focus=nummer">wijzig</a></li>
+                <li>gemeente: <?=$_SESSION['adres']['gemeente']; ?> <a href="opdracht_sessions_adres.php?focus=gemeente">wijzig</a></li>
+                <li>postcode: <?=$_SESSION['adres']['postcode']; ?> <a href="opdracht_sessions_adres.php?focus=postcode">wijzig</a></li> 
+            -->
                 </ul>
                 </fieldset>
                 <a href="opdracht_sessions_overzicht.php?session=destroy">begin opnieuw</a>

@@ -31,9 +31,14 @@
         }
     }
 
+$straat = isset($_SESSION['adres']['straat'])? $_SESSION['adres']['straat'] : '';
+$nummer = isset($_SESSION['adres']['nummer'])? $_SESSION['adres']['nummer'] : '';
+$gemeente = isset($_SESSION['adres']['gemeente'])? $_SESSION['adres']['gemeente'] : '';
+$postcode = isset($_SESSION['adres']['postcode'])? $_SESSION['adres']['postcode'] : '';
+
 
  ?>
-}
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -58,13 +63,13 @@
                     <li>nickname: <?=$_SESSION['registratie']['name']; ?></li> -->
 
         		     <li><label>straat</label></li>
-        		     <li><input id="straat" type="text" name="straat" value="<?= $_SESSION['adres']['straat']; ?>" <?= ( isset( $_GET['focus'] ) && $_GET['focus'] == "straat" ) ? 'autofocus' : '' ?> /></li>
+        		     <li><input id="straat" type="text" name="straat" value="<?=$straat;  ?>" <?= ( isset( $_GET['focus'] ) && $_GET['focus'] == "straat" ) ? 'autofocus' : '' ?> /></li>
         		     <li><label>nummer</label></li>
-        		     <li><input id="nummer" type="text" name="nummer" value="<?= $_SESSION['adres']['nummer']; ?>" <?= ( isset( $_GET['focus'] ) && $_GET['focus'] == "nummer" ) ? 'autofocus' : '' ?> /></li>
+        		     <li><input id="nummer" type="text" name="nummer" value="<?=$nummer;  ?>" <?= ( isset( $_GET['focus'] ) && $_GET['focus'] == "nummer" ) ? 'autofocus' : '' ?> /></li>
                      <li><label>gemeente</label></li>
-                     <li><input id="gemeente" type="text" name="gemeente" value="<?= $_SESSION['adres']['gemeente']; ?>" <?= ( isset( $_GET['focus'] ) && $_GET['focus'] == "gemeente" ) ? 'autofocus' : '' ?> /></li>
+                     <li><input id="gemeente" type="text" name="gemeente" value="<?=$gemeente;  ?>" <?= ( isset( $_GET['focus'] ) && $_GET['focus'] == "gemeente" ) ? 'autofocus' : '' ?> /></li>
                      <li><label>postcode</label></li>
-                     <li><input id="postcode" type="text" name="postcode" value="<?= $_SESSION['adres']['postcode']; ?>" <?= ( isset( $_GET['focus'] ) && $_GET['focus'] == "postcode" ) ? 'autofocus' : '' ?> /></li>
+                     <li><input id="postcode" type="text" name="postcode" value="<?=$postcode; ?>" <?= ( isset( $_GET['focus'] ) && $_GET['focus'] == "postcode" ) ? 'autofocus' : '' ?> /></li>
         		     <li><button type="submit" name="submit">volgende</button></li>
         		 </ul>
                 </fieldset>

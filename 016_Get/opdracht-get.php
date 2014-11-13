@@ -51,7 +51,7 @@ foreach ($artikels as $key => $value) {
                 <a href="<?="opdracht-get.php" ?>">Back</a>
                 <?php endif; ?>
             </article>
-            
+            <?=var_dump($artikels)  ?>
         </div>
         <script src="js/main.js"></script>
     </body>

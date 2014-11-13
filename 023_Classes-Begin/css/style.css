@@ -1,0 +1,13 @@
+html{
+	font-family: sans-serif;
+}
+table{
+	border: 1px solid lightgrey;
+    border-collapse:collapse;
+}
+td{
+	padding: 10px;
+	width: 100px;
+	height: 30px;
+	border: 1px solid lightgrey;
+}
