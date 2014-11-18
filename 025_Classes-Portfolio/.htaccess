@@ -1,0 +1,4 @@
+RewriteRule Options +FollowSymlinks
+RewriteEngine on
+RewriteRule (.*)\.html$ ?page=$1
+RewriteRule ([^/\.]+)\.html$ ?page=$1

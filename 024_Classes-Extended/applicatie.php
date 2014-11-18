@@ -1,7 +1,6 @@
 <!doctype html>
 <?php 
 
-// we've writen this code where we need
 function __autoload($classname) {
     $filename = "./classes/". $classname .".php";
     include_once($filename);

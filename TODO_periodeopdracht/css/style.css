@@ -1,0 +1,149 @@
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+    margin-top: 0;
+}
+body{
+    font-family: Helvetica,sans-serif;
+    background-color: #222;
+    color: #333;
+    margin-bottom: 0;
+}
+a:link, a:visited{
+    color: #333;
+}
+a:focus, a:hover{
+    color: #ff0000;
+}
+.warning{
+    border-radius: 5px;
+    border:1px solid  #999;
+    padding: 5px 10px;
+    background-color: red;
+    color: #FEFEFE  ;
+}
+
+.container{
+    display: block;
+    height: 100%; 
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FEFEFE;
+    padding: 10px;
+
+}
+.wrapper{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border:1px solid  lightgray;
+    padding: 20px;
+}
+
+li{
+    list-style: none;
+    margin-left: -45px;
+    margin-bottom: 20px; 
+    cursor: pointer;
+
+}
+
+button{
+    margin:0 10px 0 10px;
+    background-color: #F3F3F3;
+    border: 1px solid #999;
+    cursor: pointer;
+
+}
+button:focus{
+    outline-color: #FFF;
+}
+
+.done, .todo{
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+.todoLi:hover .done, .todo{
+    background-color:  #41ed41;
+}
+.todoLi:hover .todoTxt, .doneTxt{
+    text-decoration: line-through;
+}
+
+.todoLi:after, .doneLi:after, .delete:after{
+    position: absolute;
+    content: "";
+    width: 80px;
+    font-size: 11px;
+    text-align: center;
+    display: block;
+    opacity: 0;
+    margin-left: 25px;
+    margin-top: 2px;
+    padding: 2px;
+    border-radius: 3px;
+    border: 1px solid #999;
+    background-color: #F3F3F3;
+   
+}
+.delete:after{
+    margin-top: 5px;
+    margin-left: 10px;  
+}
+
+.todoLi:hover:after, .doneLi:hover:after{
+    content: "status wijzigen";
+    
+}
+
+.todoLi:hover:after, .doneLi:hover:after, .delete:hover:after{
+    content: "status wijzigen";
+    opacity: 1;
+     -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    transition-delay: 1.5s;
+    -webkit-transition-delay: 1.5s;
+}
+
+.doneLi:hover .todo, .done{
+    background-color: #F3F3F3;
+}
+.doneLi:hover .doneTxt, .todoTxt{
+    text-decoration: none;
+}
+.delete{
+    color: #FFF;
+}
+.delete:hover:after{
+    color: #333;
+    content: "verwijderen";
+}
+.delete{
+    width: 20px;
+    height: 20px;
+    border-radius: 10%;
+    background-color: red;
+}
+        
+input{
+    height: 20px;
+    width: 200px;
+}        
+.addItem{
+    width: 300px;
+    height: 25px;
+    margin-left: 0;
+    border-radius: 5px;
+}
+
+@media(max-width: 960px){
+
+    .container{
+       width: 100%; 
+    }
+
+}
