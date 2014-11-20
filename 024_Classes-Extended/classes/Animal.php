@@ -13,7 +13,6 @@ class Animal{
         $this->gender = $gender;
         $this->health = $health;
 
-
 	}
 
 	public function getName(){

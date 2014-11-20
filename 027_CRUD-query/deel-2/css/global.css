@@ -1,0 +1,23 @@
+html{
+	font-family: sans-serif;
+}
+body{
+	font-family: Avenir;
+}
+table{
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+th, td{
+	width: 340px;
+	padding: 10px;
+	border: 1px solid #999;
+}
+tr:nth-child(2n) {
+  background:#f0f0f0;
+}
+thead{
+	text-align: center;
+	background-color: lightgray;
+}
+
