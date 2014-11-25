@@ -1,0 +1,57 @@
+html{
+	font-family: sans-serif;
+}
+body{
+	font-family: Avenir;
+}
+table{
+	border-collapse: collapse;
+}
+th, td{
+	padding: 10px;
+	border: 1px solid #999;
+}
+tr:nth-child(2n) {
+  background:#f0f0f0;
+}
+thead{
+	text-align: center;
+	background-color: lightgray;
+}
+footer{
+	display: block;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/* delete button */
+.delete{
+	outline: none;
+	width: 20px;
+	height: 20px;
+	background-image: url('img/icon-delete.png');
+}
+
+
+/* messages */
+.error, .success, .warning {
+	border-radius: 5px;
+	padding: 10px;
+	color: #fffdee;
+}
+
+.warning{
+	color: #333;
+	background-color: pink;
+}
+
+.error{
+	background-color: red;
+}
+.success{
+	color: #333;
+	background-color: lightgreen;
+}

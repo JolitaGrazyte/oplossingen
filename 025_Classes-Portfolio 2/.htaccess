@@ -1,4 +1,4 @@
 RewriteRule Options +FollowSymlinks
 RewriteEngine on
-RewriteRule (.*)$ ?page=$1
+RewriteRule (.*)\.html$ ?page=$1
 RewriteRule ([^/\.]+)\.html$ ?page=$1

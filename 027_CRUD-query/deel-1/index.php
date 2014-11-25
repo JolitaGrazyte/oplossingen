@@ -1,4 +1,7 @@
 <?php 
+
+    $messageContainer = '';
+
     try{
 		
         $dbLink = new PDO('mysql:host=localhost;dbname=bieren', 'jolita', 'zN6br4fLYVJ8pSNy');
@@ -53,7 +56,7 @@
          <meta name="description" content="">
          <meta name="viewport" content="width=device-width, initial-scale=1">
          <title>CRUD query</title>
-         <link rel="stylesheet" href="css/global.css">
+         <link rel="stylesheet" href="../css/style.css">
      </head>
      <body>
 

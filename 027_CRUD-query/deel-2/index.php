@@ -63,7 +63,7 @@ try
          <meta name="description" content="">
          <meta name="viewport" content="width=device-width, initial-scale=1">
          <title>CRUD query DEEL 2</title>
-         <link rel="stylesheet" href="css/global.css">
+         <link rel="stylesheet" href="../css/style.css">
      </head>
      <body>
 
