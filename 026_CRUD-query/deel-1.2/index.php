@@ -4,8 +4,8 @@
     include_once ('../classes/Message.php');
     include_once ('MsqlConnect.php');
 
-$bierNaam = 'du%';
-$brouwerNaam = '%a%';
+$valuesToBind = array(':bierNaam' => 'du%',':brouwerNaam' => '%a%');
+
 $message = '';
 //$messageStatus = false;
 
@@ -19,11 +19,10 @@ try {
 
 $msqlConn = new MsqlConnect('bieren', 'jolita', 'zN6br4fLYVJ8pSNy', $queryString);
 
-$bierenArray = $msqlConn->query($queryString, $bierNaam, $brouwerNaam);
+$bierenArray = $msqlConn->query($queryString, $valuesToBind);
 
 Message::setMessage( 'Successfully connected to database! ' , 'success');
 
-	
 } 
 
 catch (PDOException $e) {
@@ -36,10 +35,10 @@ catch (PDOException $e) {
 
 
 $headerArr = array('link' => 'header.view.php',
-                             'data' => array('title' => 'CRUD insert'));
+                             'data' => array('title' => 'CRUD query'));
 
 $bodyArr = array('link' =>  'index.view.php',
-                            'data' => array('title' => 'CRUD insert', 
+                            'data' => array('title' => 'CRUD query', 
                             'messages' => Message::getMessages(), 
 
                             'thead' => $bierenArray[0], 

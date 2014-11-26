@@ -42,10 +42,10 @@ $brouwersArray = $msqlConn->query($queryStr, $val);
 
 
 $headerArr = array('link' => 'header.view.php',
-                             'data' => array('title' => 'CRUD insert'));
+                             'data' => array('title' => 'CRUD query * deel 2'));
 
 $bodyArr = array('link'  =>  'index.view.php',
-                             'data'         => array('title'        => 'CRUD insert', 
+                             'data'         => array('title'        => 'CRUD query * deel 2', 
                                                      'messages'     => Message::getMessages(),
                                                      'bierenStatus' => $selectedBrouwer,
                                                      'brouwers'     => $brouwersArray[1], 

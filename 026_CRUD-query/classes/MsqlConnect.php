@@ -7,15 +7,16 @@ class MsqlConnect
     public function __construct($db, $user, $pass, $queryString){
         $host = 'mysql:host=localhost;dbname=';
         $this->msqlLink = new PDO($host.$db, $user, $pass);
-      
+            
+    
     }
 
-
-    public function query($queryString, $bierNaam, $brouwerNaam){
+    public function query($queryString, $val){
 
         $statement = $this->msqlLink->prepare($queryString);
-        $statement->bindValue(':bierNaam', $bierNaam);
-        $statement->bindValue(':brouwerNaam', $brouwerNaam);
+
+        $statement->bindValue(':val', $val);
+        
         $statement->execute();
 
         return $this->fetchResult($statement);

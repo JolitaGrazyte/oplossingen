@@ -7,17 +7,15 @@ class MsqlConnect
     public function __construct($db, $user, $pass, $queryString){
         $host = 'mysql:host=localhost;dbname=';
         $this->msqlLink = new PDO($host.$db, $user, $pass);
-            
-    
+      
     }
 
-    public function query($queryString, $val){
+
+    public function query($queryString, $valuesToBind){
 
         $statement = $this->msqlLink->prepare($queryString);
 
-        $statement->bindValue(':val', $val);
-        
-        $statement->execute();
+        $statement->execute($valuesToBind);
 
         return $this->fetchResult($statement);
     }
@@ -43,7 +41,6 @@ class MsqlConnect
         $result[] = $fetchRow;
         
         return $result;
-        return $fetchRow;
     }
 
 }
