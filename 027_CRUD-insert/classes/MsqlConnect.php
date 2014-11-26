@@ -12,16 +12,28 @@ class MsqlConnect
 
     }
 
-    public function query($queryString, $val){
+    public function query($queryString, $valuesToBind){
 
         $statement = $this->msqlLink->prepare($queryString);
 
-        $statement->bindValue(':val', $val);
-        
-        $statement->execute();
+        $statement->execute($valuesToBind);
 
         return $this->fetchResult($statement);
     }
+
+
+    public function insert_delete($queryString, $valuesToBind){
+
+        $statement = $this->msqlLink->prepare($queryString);
+
+        $isSubmited = $statement->execute($valuesToBind);
+
+        $results = array($isSubmited, $statement->errorInfo()[2]);
+
+        return $results;
+
+    }
+
 
     public function fetchResult($statement){
         
@@ -31,7 +43,7 @@ class MsqlConnect
         {
             $fetchRow[] = $row;
 
-             $theadArr = array();
+            $theadArr = array();
 
             foreach ($fetchRow[0] as $key => $value) 
             {
@@ -45,7 +57,6 @@ class MsqlConnect
         $result[] = $fetchRow;
         
         return $result;
-        return $fetchRow;
     }
 
 }

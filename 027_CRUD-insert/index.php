@@ -19,24 +19,39 @@ try
                 $messagesStatus = true;
             }
         elseif(isset($_POST['submit'])) {
-                Message::setMessage( "Successfully submited." , 'success');
-                $messagesStatus = true;
             
+                $messagesStatus = true;
+           
 
-		$dbLink = new PDO('mysql:host=localhost;dbname=bieren', 'jolita', 'zN6br4fLYVJ8pSNy');
-		$queryStr = 'INSERT INTO brouwers(brnaam, adres, postcode, gemeente, omzet) 
+$valuesToBind = array(  ':brouwernaam'  => $_POST['brouwernaam'], 
+                        ':adres'        => $_POST['adres'], 
+                        ':postcode'     => $_POST['postcode'],
+                        ':gemeente'     => $_POST['gemeente'],
+                        ':omzet'        => $_POST['omzet']);
+
+//___query string__//
+$queryStr = 'INSERT INTO brouwers(brnaam, adres, postcode, gemeente, omzet) 
                      VALUES (:brouwernaam, :adres, :postcode, :gemeente, :omzet)';
 
 
-		$statement = $dbLink->prepare($queryStr);
+//___connecting to database___
+$msqlConn = new MsqlConnect('bieren', 'jolita', 'zN6br4fLYVJ8pSNy', $queryStr);
 
-		$statement->execute(array(	':brouwernaam' => $_POST['brouwernaam'], 
-									':adres' => $_POST['adres'], 
-									':postcode' => $_POST['postcode'],
-									':gemeente' => $_POST['gemeente'],
-									':omzet' => $_POST['omzet']));
+//__inserting__//
+$isSubmited = $msqlConn->insert_delete($queryStr, $valuesToBind);
 
-	}
+//__checking if all went right__//
+//__and giving a feedback__//
+ if ($isSubmited[0]) {
+                    Message::setMessage( "Successfully submited." , 'success');
+                    header( "refresh:1.5; url=index.php" ); 
+                }
+                else{
+                    $message  =  "Something went wrong! Couldn't submit: " . $isSubmited[1];
+                    Message::setMessage( $message , 'error');
+                }
+
+	   }
 		
     }
 	catch ( PDOException $e )
