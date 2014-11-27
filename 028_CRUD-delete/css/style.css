@@ -43,7 +43,7 @@ footer{
 	color: #fffdee;
 }
 
-.warning{
+.warning, .toBeDeleted{
 	color: #333;
 	background-color: pink;
 }

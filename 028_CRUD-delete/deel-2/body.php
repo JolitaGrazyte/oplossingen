@@ -1,7 +1,7 @@
 
  <body>
      <h2>Overzicht van de bieren</h2>
-     <?php if ($mStatus): ?>
+     <?php if ($messages): ?>
         <?php foreach ($messages as $value): ?>
             <div class="<?=$value['type'] ?>"><?=$value['text'] ?></div> 
         <?php endforeach ?>
@@ -9,12 +9,13 @@
 
 
      
-  		<?php if ($delete): ?>
+  	<?php if ($delete): ?>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
             <button name="ja" type="submit" value="<?=$valToDelete ?>">JA</button>
             <button name="nee" type="submit" value="nee">NEE</button>
-            </form>
-      <?php endif ?>
+        </form>
+    <?php endif ?>
+
     <form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
      <table>
         <thead>
@@ -28,7 +29,7 @@
         </thead>
         <tbody>
         <?php foreach ($brouwers as $indx => $row): ?>
-        <tr>
+        <tr class="<?=($row['brouwernr'] == $valToDelete) ? 'toBeDeleted' : '' ?>">
         <td> <?=($indx+1) ?> </td>
             <?php foreach ($row  as  $value): ?>
                 <td> <?=$value ?> </td>

@@ -3,15 +3,14 @@
 function __autoload($classname) {
     include_once ('../classes/'. $classname .'.php');
 }
-    $mStatus = false;
 
     $valuesToBind = array(':brouwer' => 'jo%');
 
     try{
 
          $queryStr = 'SELECT * FROM brouwers
-                     WHERE brouwers.brnaam 
-                     LIKE :brouwer';
+                      WHERE brouwers.brnaam 
+                      LIKE :brouwer';
 
         //__connectie__//
         $msqlConn = new MsqlConnect('bieren', 'jolita', 'zN6br4fLYVJ8pSNy', $queryStr);
@@ -25,7 +24,6 @@ function __autoload($classname) {
 
                 header('Location: index.php');
 
-                $mStatus = true;
 
                 $delQueryStr = 'DELETE FROM brouwers WHERE brouwernr = :brouwernr';
                 $isDeleted = $msqlConn->insert_delete($delQueryStr, array(':brouwernr'=>$_POST['delete']));
@@ -51,8 +49,8 @@ $headerArr = array('link' => 'header.php',
                              'data' => array('title' => 'CRUD delete'));
 
 $bodyArr = array('link' =>  'body.php',
-                            'data' => array('title'     => 'CRUD delete', 'messages' => Message::getMessages(), 
-                                            'mStatus'   => $mStatus,
+                            'data' => array('title'     => 'CRUD delete', 
+                                            'messages' => Message::getMessages(), 
                                             'brouwers'  => $brouwers[1],
                                             'thead'     => $brouwers[0] ));
 

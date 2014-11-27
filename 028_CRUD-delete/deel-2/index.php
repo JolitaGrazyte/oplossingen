@@ -3,7 +3,6 @@
 function __autoload($classname) {
     include_once ('../classes/'. $classname .'.php');
 }
-    $mStatus = false; // messages status
     $confirmBtn = false; // confirm btn status, to control if it's visibile
     $valuesToBind = array(':brouwer' => 'jo%');
     $valToDelete = '';
@@ -26,8 +25,6 @@ function __autoload($classname) {
         //__delete aktie__//
         if (isset($_POST['delete'])) {
 
-            $mStatus = true;
-
             $confirmBtn = true;
 
             $valToDelete =  $_POST['delete'];
@@ -36,8 +33,6 @@ function __autoload($classname) {
         }  
 
         if (isset($_POST['ja'])) {
-            
-            $mStatus = true;
 
                 $delQueryStr = 'DELETE FROM brouwers WHERE brouwernr = :brouwernr';
                 $isDeleted = $msqlConn->insert_delete($delQueryStr, array(':brouwernr'=>$_POST['ja']));
@@ -50,7 +45,7 @@ function __autoload($classname) {
                 else{
                     $message  =  "Something went wrong! Couldn't remove: " . $isDeleted[1];
                     Message::setMessage( $message , 'error');
-                    header( "refresh:1.5; url=index.php" ); 
+                    header( "refresh:5; url=index.php" ); 
                 }
                 
 
@@ -70,7 +65,6 @@ $headerArr = array('link' => 'header.php',
 $bodyArr = array('link' =>  'body.php',
                             'data' => array('title'         => 'CRUD delete | deel 2', 
                                             'messages'      => Message::getMessages(), 
-                                            'mStatus'       => $mStatus,
                                             'valToDelete'   => $valToDelete,
                                             'brouwers'      => $brouwers[1],
                                             'thead'         => $brouwers[0],

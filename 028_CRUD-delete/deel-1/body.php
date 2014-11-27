@@ -1,7 +1,7 @@
 <body>
     <h1><?=$title ?></h1>
      <h2>Overzicht van de bieren</h2>
-     <?php if ($mStatus): ?>
+     <?php if ($messages): ?>
         <?php foreach ($messages as $value): ?>
             <div class="<?=$value['type'] ?>"><?=$value['text'] ?></div> 
         <?php endforeach ?>

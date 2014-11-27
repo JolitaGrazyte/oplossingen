@@ -44,7 +44,7 @@ $isSubmited = $msqlConn->insert_delete($queryStr, $valuesToBind);
 //__and giving a feedback__//
  if ($isSubmited[0]) {
                     Message::setMessage( "Successfully submited." , 'success');
-                    header( "refresh:1.5; url=index.php" ); 
+                    header( "refresh:2; url=index.php" ); 
                 }
                 else{
                     $message  =  "Something went wrong! Couldn't submit: " . $isSubmited[1];
