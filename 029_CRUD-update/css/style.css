@@ -1,0 +1,95 @@
+html{
+	font-family: sans-serif;
+	height: 100%;
+}
+body{
+	font-family: Avenir;
+}
+
+.container{
+	position: relative;
+	padding-bottom: 100px;
+}
+
+table{
+	border-collapse: collapse;
+}
+th, td{
+	padding: 10px;
+	border: 1px solid #999;
+}
+tr:nth-child(2n) {
+  background:#f0f0f0;
+}
+thead{
+	text-align: center;
+	background-color: lightgray;
+}
+
+input{
+	width: 200px;
+	line-height: 20px;
+}
+input[class="submit"]{
+	margin: 0 0 20px 40px;
+	width: 205px;
+	line-height: 20px;
+}
+
+label{
+	margin-top: 40px;
+}
+
+footer{
+	display: block;
+	text-align: center;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+li{
+	list-style: none;
+}
+
+/* buttons */
+.delete, .edit{
+	outline: none;
+	width: 20px;
+	height: 20px;
+	
+}
+
+.edit{
+	background-image: url('img/icon-edit.png');
+}
+.delete{
+	background-image: url('img/icon-delete.png');
+}
+
+
+/* messages */
+.error, .success, .warning {
+	border-radius: 5px;
+	padding: 10px;
+	color: #fffdee;
+	margin-bottom: 20px
+}
+a.contact{
+	color: #fffdee;
+	font-style: italic;
+}
+
+.warning, tr[class="toBeDeleted"]{
+	color: #333;
+	background-color: pink;
+}
+
+.error{
+	background-color: red;
+}
+.success{
+	color: #333;
+	background-color: lightgreen;
+}
