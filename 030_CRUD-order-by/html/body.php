@@ -35,6 +35,7 @@
         </div>
 
     </form>
+
     <?php endif ?>
 
     <?php if ($valToDelete): ?>
@@ -49,9 +50,9 @@
         <table>
             <thead>
                 <tr>
-                    <?php foreach ($colNames as $value): ?>
+                    <?php foreach ($colNames as $key => $value): ?>
                     <th class="<?=($order == 'DESC') ? 'asc' : 'desc' ?>">
-                        <a href="?order=<?="$order" ?>"> <?=$value ?></a>
+                        <a href="?orderBy=<?="$key" ?>-<?="$order" ?>"> <?=$value ?></a>
                     </th>
                     <?php endforeach ?>
                     <th>delete</th>

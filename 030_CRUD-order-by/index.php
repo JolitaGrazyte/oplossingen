@@ -14,9 +14,13 @@ function __autoload($classname) {
     $colToOrderBy = 'bieren.biernr';
 
 
-       if (isset($_GET['order'])) {
+       if (isset($_GET['orderBy'])) {
+
+        $orderByArr = explode('-', $_GET['orderBy']);
+        $colToOrderBy = $orderByArr[0];
+
             
-            if ($_GET['order'] === 'DESC') {
+            if ($orderByArr[1] === 'DESC') {
                 $order = 'ASC';
             }
             else{
@@ -42,38 +46,12 @@ function __autoload($classname) {
         //__query resultaten__//
         $results = $msqlConn->query($queryStr, $valuesToBind);
 
-        function makeColNames($dbColNames){
-
-            $colnames = array();
-
-            foreach ($dbColNames as $value) {
-                switch ($value) {
-                case 'biernr': $colnames[] = 'Biernummer (PK)';
-                    break;
-                case 'naam': $colnames[] = 'Biernaam';
-                    break;
-                case 'brnaam': $colnames[] = 'Brouwernaam';
-                    break;
-                case 'soort': $colnames[] = 'Soort';
-                    break;
-                case 'alcohol': $colnames[] = 'Alcoholpercentage';
-                    break;
-
-                case 'brouwernr': $colnames[] = 'Brouwernr(PK)';
-                    break;
-                
-                default:
-                    # code...
-                    break;
-            }
-        }
-
-            return $colnames;
-        }
-
-        $colNames = makeColNames($results[0]);
-        //var_dump($colNames);
-        
+        $colNames = array(  'biernr'     => 'Biernummer (PK)', 
+                            'naam'       => 'Biernaam', 
+                            'brnaam'     => 'Brouwernaam', 
+                            'soort'      => 'Soort', 
+                            'alcohol'    => 'Alcoholpercentage',
+                            'brouwernr'  => 'Brouwernr(PK)' );
 
         //__delete aktie__//
         if (isset($_POST['delete'])) {
