@@ -8,9 +8,6 @@
         <?=$value[ 'text'] ?>
     </div>
     <?php endforeach ?>
-    <?php if (!empty($email)): ?>
-        <a href="$email"><?=$email ?></a>
-    <?php endif ?>
     <?php endif ?>
 
 
