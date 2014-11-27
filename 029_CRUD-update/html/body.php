@@ -1,7 +1,7 @@
 <body>
 <div class="container">
 <section>
-    <h2>Overzicht van de bieren</h2>
+    <h2>Overzicht van de brouwers</h2>
     <?php if ($messages): ?>
     <?php foreach ($messages as $value): ?>
     <div class="<?=$value['type'] ?>">

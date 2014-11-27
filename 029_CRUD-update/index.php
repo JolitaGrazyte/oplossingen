@@ -118,10 +118,10 @@ catch (PDOException $e) {
 //___BUILD HTML___//
 
 $headerArr = array('link' => 'header.php',
-                             'data' => array('title' => 'CRUD update | deel 1'));
+                             'data' => array('title' => 'CRUD update'));
 
 $bodyArr = array('link' =>  'body.php',
-                            'data' => array('title'         => 'CRUD update | deel 1', 
+                            'data' => array('title'         => 'CRUD update', 
                                             'messages'      => Message::getMessages(), 
                                             'brouwers'      => $brouwers[1],
                                             'colNames'      => $brouwers[0],
