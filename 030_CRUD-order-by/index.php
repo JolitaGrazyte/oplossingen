@@ -76,8 +76,8 @@ function __autoload($classname) {
                     //Message::setMessage( $message , 'error');
                     Message::setMessage( 'De datarij kon niet verwijderd worden. 
                                          Probeer opnieuw of neem contact op 
-                                         met de systeembeheerder wanneer deze fout blijft aanhouden. ', 'error');
-                    $email = 'jolita@wgwstore.com';
+                                         met de systeembeheerder wanneer deze fout blijft aanhouden. 
+                                         <a class="contact" href="mailto:"'.$admin_email.'">jolita@wgwstore.com</a>', 'error');
                     //header( "refresh:5; url=index.php" ); 
                 }
                 
@@ -129,7 +129,6 @@ function __autoload($classname) {
                                          Probeer opnieuw of neem contact 
                                          op met de systeembeheerder wanneer deze fout blijft aanhouden. 
                                          <a class="contact" href="mailto:"'.$admin_email.'">jolita@wgwstore.com</a>', 'error');
-                    $email = 'jolita@wgwstore.com';
                     //header( "refresh:5; url=index.php" ); 
                 }
         }
