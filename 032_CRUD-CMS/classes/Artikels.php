@@ -2,11 +2,9 @@
 
 class Artikels{
 
-	public static function getArtikels(){
+	public static function getArtikels( $msqlConn ){
 
 		$queryStr = 'SELECT * FROM artikels WHERE is_archived = 0';
-
-		$msqlConn = new MsqlConnect( 'CRUD_CMS', 'jolita', 'zN6br4fLYVJ8pSNy');
 
         $valToBind = array();
 
@@ -19,9 +17,7 @@ class Artikels{
 	}
 
 
-    public static function createArtikel($valToBind){
-
-        $msqlConn = new MsqlConnect( 'CRUD_CMS', 'jolita', 'zN6br4fLYVJ8pSNy');
+    public static function createArtikel($msqlConn, $valToBind){
 
             $queryStr = 'INSERT INTO artikels (title, artikel, kernwoorden)
                          VALUES (:title, :artikel, :kernwoorden)';
@@ -30,12 +26,9 @@ class Artikels{
 
         return $isSubmited;
 
-
     }
 
-    public static function updateArtikel($valToBind){
-
-        $msqlConn = new MsqlConnect( 'CRUD_CMS', 'jolita', 'zN6br4fLYVJ8pSNy');
+    public static function updateArtikel($msqlConn, $valToBind){
 
         $queryStr = 'UPDATE artikels
 
@@ -51,8 +44,6 @@ class Artikels{
 
     }
 
-
 }
-
 
  ?>

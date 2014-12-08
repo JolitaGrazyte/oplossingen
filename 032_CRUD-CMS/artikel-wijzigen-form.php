@@ -6,9 +6,11 @@ function __autoload($classname) {
     include_once ('./classes/'. $classname .'.php');
 }
 
-$messages = Message::getMessages();
-$artikels = Artikels::getArtikels();
+$msqlConn = new MsqlConnect( 'CRUD_CMS', 'jolita', 'zN6br4fLYVJ8pSNy');
 
+$artikels = Artikels::getArtikels( $msqlConn );
+
+$messages = Message::getMessages();
 
 $artikelID = isset($_GET['artikel']) ? $_GET['artikel'] : '';
 $_SESSION['artikel']['artikel_id'] = $artikels[$artikelID]['id'];

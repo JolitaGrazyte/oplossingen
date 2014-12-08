@@ -18,7 +18,8 @@ if (isset($_POST['submit'])) {
 
 	}
 	else{
-	
+			$msqlConn = new MsqlConnect( 'CRUD_CMS', 'jolita', 'zN6br4fLYVJ8pSNy');
+
 			$valToBind = array(	
 	
 							':title' 		=> $_POST['title'], 
@@ -31,7 +32,7 @@ if (isset($_POST['submit'])) {
 
 		try {
 
-			$isUpdated = Artikels::updateArtikel($valToBind);
+			$isUpdated = Artikels::updateArtikel( $msqlConn, $valToBind );
 
     
             if ($isUpdated[0]) {

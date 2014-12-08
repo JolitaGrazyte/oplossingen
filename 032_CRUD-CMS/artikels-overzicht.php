@@ -6,8 +6,12 @@ function __autoload($classname) {
     include_once ('./classes/'. $classname .'.php');
 }
 
+$msqlConn = new MsqlConnect( 'CRUD_CMS', 'jolita', 'zN6br4fLYVJ8pSNy');
+
 $messages = Message::getMessages();
-$artikels = Artikels::getArtikels();
+$artikels = Artikels::getArtikels( $msqlConn );
+
+$email = isset($_SESSION['login']['email']) ? $_SESSION['login']['email'] : '';
 
 // var_dump($_SESSION['artikel']['artikel_id']);
 // var_dump($_SESSION);
@@ -35,7 +39,7 @@ $artikels = Artikels::getArtikels();
             <?php endforeach ?>
         <?php endif ?>
 
-     <a href="dashboard.php">Terug naar dashboard</a> | Ingelogd als <a href="">test@test.be</a>  | <a href="logout.php">uitloggen</a>
+     <a href="dashboard.php">Terug naar dashboard</a> | Ingelogd als <a href="<?='mailto:$email'  ?>"> <?=$email  ?> </a>  | <a href="logout.php">uitloggen</a>
 
      </header>
 
