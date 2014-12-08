@@ -3,32 +3,38 @@
 
 session_start();
 
-function __autoload($classname) {
+function __autoload( $classname ) {
     include_once ('./classes/'. $classname .'.php');
 }
 
+$isEmailValid = filter_var( $_POST['email'], FILTER_VALIDATE_EMAIL ) ? true : false;
 
-if (isset($_POST['submit'])) {
+if ( isset($_POST['submit']) ) {
 
 	$email = $_POST['email'];
 	$pass  = $_POST['password'];
 
-	$_SESSION['login']['email'] 	= $email;
-	$_SESSION['login']['password'] 	= $pass;
+	$_SESSION[ 'login' ][ 'email' ]		=	$email;
+	$_SESSION[ 'login' ][ 'password' ]	=	$pass;
 
+	if ( $isEmailValid && !empty( $pass )) {
 
-	if ( filter_var( $email, FILTER_VALIDATE_EMAIL ) ) {
+		//___make connection to database___//
+        $msqlConn = new MsqlConnect( 'login', 'jolita', 'zN6br4fLYVJ8pSNy' );
 
-		// $authenticated = User::authenticate();
+        $loggedIn = User::validateLogin( $msqlConn, $email, $pass );
 
-		// if ($authenticated) {
-		// 	Message::setMessage('U bent ingelogd.', 'success'); 
-		// 	Header('Location: dashboard.php');
-		
-		// else{
-		// 	Message::setMessage('Er ging iets mis. Probeer opnieuw.', 'error');
-		// 	Header('Location: login-form.php');
-		// }
+		if ( $loggedIn ) {
+
+			Message::setMessage('U bent ingelogd.', 'success'); 
+			Header('Location: dashboard.php');
+
+		}
+		else{
+
+		Message::setMessage('Er ging iets mis. Probeer opnieuw.', 'error');
+		Header('Location: login-form.php');
+		}
 	
 	}
 	else{
