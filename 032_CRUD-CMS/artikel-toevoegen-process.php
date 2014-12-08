@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 
 			$msqlConn = new MsqlConnect( 'CRUD_CMS', 'jolita', 'zN6br4fLYVJ8pSNy');
 
-            $isSubmited = Artikels::createArtikel($msqlConn, $valToBind);
+            $isSubmited = Artikels::createArtikel( $msqlConn, $valToBind );
     
             if ($isSubmited[0]) {
     

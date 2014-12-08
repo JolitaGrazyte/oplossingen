@@ -2,7 +2,7 @@
 
 session_start(); 
 
-function __autoload($classname) {
+function __autoload( $classname ) {
     include_once ('./classes/'. $classname .'.php');
 }
 
@@ -15,7 +15,6 @@ $idToUpdate = $artikels[$artikelID]['id'];
 
 
 try {
-		$msqlConn = new MsqlConnect( 'CRUD_CMS', 'jolita', 'zN6br4fLYVJ8pSNy');
 
 		$queryStr = 'UPDATE artikels
 

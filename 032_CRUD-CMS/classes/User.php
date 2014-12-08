@@ -110,6 +110,12 @@ class User{
 				if ($newHashedPass == $dbPass)
 				{
 					$cookie = self::setCookie( $salt, $email );
+
+					$updateStr = 'UPDATE users
+								 SET last_login_time = NOW();
+	                 			 WHERE 	email = :email';
+
+       				$msqlConn->update( $updateStr, $valToBind );
 				}
 
 				return $cookie;

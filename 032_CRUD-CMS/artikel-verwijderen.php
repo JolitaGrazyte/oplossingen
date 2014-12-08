@@ -6,14 +6,14 @@ function __autoload($classname) {
     include_once ('./classes/'. $classname .'.php');
 }
 
-$artikels = Artikels::getArtikels();
+$msqlConn = new MsqlConnect( 'CRUD_CMS', 'jolita', 'zN6br4fLYVJ8pSNy');
+
+$artikels = Artikels::getArtikels( $msqlConn );
 $artikelID = isset($_GET['artikel']) ? $_GET['artikel'] : '';
 
 $idToArchive = $artikels[$artikelID]['id'];
 
 try {
-
-	$msqlConn = new MsqlConnect( 'CRUD_CMS', 'jolita', 'zN6br4fLYVJ8pSNy');
 
 	$queryStr = 'UPDATE artikels
 
