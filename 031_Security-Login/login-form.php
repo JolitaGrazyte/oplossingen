@@ -5,10 +5,25 @@ function __autoload($classname) {
     include_once ('./classes/'. $classname .'.php');
 }
 
-$email   = isset($_SESSION['registratie']['email']) ? $_SESSION['registratie']['email'] : '';
-$pass    = isset($_SESSION['registratie']['pass'])  ? $_SESSION['registratie']['pass']  : '';
 
-$messages = Message::getMessages();
+$msqlConn = new MsqlConnect( 'login', 'jolita', 'zN6br4fLYVJ8pSNy' ); 
+
+if ( User::authenticate( $msqlConn )) {
+
+    header( 'Location: dashboard.php' );
+}
+
+else{
+
+    $messages = Message::getMessages();
+        
+    $email  = isset( $_SESSION['login']['email'] )    ? $_SESSION['login']['email'] : '';
+        
+    $pass   = isset( $_SESSION['login']['password'] ) ? $_SESSION['login']['password'] : '';
+
+}
+
+var_dump( $_COOKIE );
 
  ?>
 

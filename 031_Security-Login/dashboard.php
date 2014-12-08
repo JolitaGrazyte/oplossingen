@@ -2,11 +2,15 @@
 
 session_start();
 
-function __autoload($classname) {
+function __autoload( $classname ) {
     include_once ('./classes/'. $classname .'.php');
 }
 
-$authenticated = User::authenticate();
+//___make connection to database___//
+$msqlConn = new MsqlConnect( 'login', 'jolita', 'zN6br4fLYVJ8pSNy' );
+
+//__validate User__//
+$authenticated = User::authenticate( $msqlConn );
 
     if ( $authenticated )
     {
@@ -16,7 +20,6 @@ $authenticated = User::authenticate();
     else
     {
         User::logout();
-        Message::setMessage('Er ging iets mis tijdens het inloggen, probeer opnieuw.', 'error');
         Header( 'Location: login-form.php' );
     }
 
@@ -50,8 +53,12 @@ $authenticated = User::authenticate();
 			<p>Hallo, <?=$userName ?></p>
 		<?php endif ?>
         
- -->
+ -->    
+        <?php if ( $authenticated ): ?>
+
             <a href="logout.php">Uitloggen</a>
+
+        <?php endif ?>
 
     </body>
 </html>
