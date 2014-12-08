@@ -2,17 +2,13 @@
 
 session_start();
 
-function __autoload( $classname ) {
+function __autoload($classname) {
     include_once ('./classes/'. $classname .'.php');
 }
 
 $email = isset($_SESSION['login']['email']) ? $_SESSION['login']['email'] : '';
 
-//___make connection to database___//
-$msqlConn = new MsqlConnect( 'CRUD_CMS', 'jolita', 'zN6br4fLYVJ8pSNy' );
-
-//__validate User__//
-$authenticated = User::authenticate( $msqlConn );
+$authenticated = User::authenticate();
 
     if ( $authenticated )
     {
@@ -21,7 +17,7 @@ $authenticated = User::authenticate( $msqlConn );
     }
     else
     {
-        User::logout();
+        Message::setMessage('Er ging iets mis tijdens het inloggen, probeer opnieuw.', 'error');
         Header( 'Location: login-form.php' );
     }
 
@@ -38,7 +34,7 @@ $authenticated = User::authenticate( $msqlConn );
     <body>
     <header>
 
-        <a href="dashboard.php">Terug naar dashboard</a> | Ingelogd als <a href="<?=$email ?>"><?=$email ?></a>  | <a href="logout.php">uitloggen</a>
+        <a href="dashboard.php">Terug naar dashboard</a> | Ingelogd als <a href="<?=$email ?>"><?=$email ?> test@test.be</a>  | <a href="logout.php">uitloggen</a>
         
     </header>
 
@@ -46,8 +42,8 @@ $authenticated = User::authenticate( $msqlConn );
     <!-- <h1><?=$title ?></h1> -->
 
         <div class="message">
-            
-        <?php if ($messages): ?>
+			
+		<?php if ($messages): ?>
             <?php foreach ($messages as $value): ?>
 
                 <div class="<?=$value['type'] ?>"><?=$value['text'] ?></div> 
@@ -55,7 +51,7 @@ $authenticated = User::authenticate( $msqlConn );
             <?php endforeach ?>
         <?php endif ?>
 
-        </div>
+		</div>
 
         <p><a href="artikels-overzicht.php">Artikels</a></p>
 
@@ -63,3 +59,4 @@ $authenticated = User::authenticate( $msqlConn );
 
     </body>
 </html>
+ 

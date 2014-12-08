@@ -49,7 +49,7 @@ $messages = Message::getMessages();
 				<button name="generatePass" type="hidden" value="Genereer een password">Genereer een password</button>
 				<button name="submit" type="submit" value="registreer">Registreer</button>	
 
-				<p><a href="registratie-process.php?session=destroy">begin opnieuw</a></p>
+				<p><a href="?session=destroy">begin opnieuw</a></p>
 			
 
 				<?=var_dump($_SESSION) ?>
