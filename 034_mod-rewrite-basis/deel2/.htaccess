@@ -1,0 +1,16 @@
+###################################################
+
+#RewriteRule ^article/used/to/be/here.php$ /article/now/lives/here/
+#RewriteRule URL/to/match URL/to/use/if/it/matches
+
+###################################################
+
+RewriteEngine On
+
+#RewriteRule ^redirect.php$ original.php 
+#RewriteRule ^original.php$ redirect.php
+#RewriteRule ^ original.php
+
+RewriteRule ^rasmus$ original.php?user=rasmus
+
+
