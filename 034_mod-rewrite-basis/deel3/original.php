@@ -11,10 +11,8 @@
      </head>
      <body>
          <h1>ORIGINAL</h1>
-         <a href="rasmus">R A S M U S</a>
-         <?php 
-var_dump($_GET);
+         
+         <?= var_dump($_GET) ?>
 
- ?>
      </body>
  </html>

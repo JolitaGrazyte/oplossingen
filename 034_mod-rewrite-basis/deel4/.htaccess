@@ -11,7 +11,7 @@ RewriteEngine On
 #RewriteRule ^original.php$ redirect.php
 #RewriteRule ^ original.php
 
-RewriteRule ^([a-z0-9-]+)/([a-z0-9-]+)$ original.php?role=$1&user=$2
+RewriteRule ^([a-z0-9-]+)/([a-z0-9-]+)/$ original.php?role=$1&user=$2
 
 
 
