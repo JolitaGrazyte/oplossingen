@@ -29,7 +29,7 @@ if (isset( $_GET['page'] ) ? $_GET['page'] : 'index') {
 						   'data' => array('bodyItem' => ''));
 }
 else {
-	foreach ($nav as $page) {
+	foreach ( $nav as $page ) {
 		//$body 	= (isset( $_GET['page'] ) ? $_GET['page'] : $page) . '.partial.html';
 		$bodyArr = array('link' => (isset( $_GET['page'] ) ? $_GET['page'] : $page) . '.partial.html',
 						   'data' => array('bodyItem' => ''));

@@ -6,8 +6,9 @@ function __autoload($classname) {
 
 $pages = array('works', 'contact');
 
-if (isset( $_GET['page'] ) ? $_GET['page'] : 'index') {
-	$body 	= (isset( $_GET['page'] ) ? $_GET['page'] : 'index') . '.partial.html';
+
+if ( isset( $_GET['page'] ) ? $_GET['page'] : 'about' ) {
+	$body 	= (isset( $_GET['page'] ) ? $_GET['page'] : 'about') . '.partial.html';
 }
 else {
 	foreach ($pages as $page) {
