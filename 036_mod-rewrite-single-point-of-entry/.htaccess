@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} !\.css$
+
+RewriteRule ([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?controller=$1&method=$2&brouwernr=$3
+
+RewriteRule ([^/\.]+)/$ index.php
