@@ -17,7 +17,7 @@ $_SESSION['artikel']['artikel_id'] = $artikels[$artikelID]['id'];
 
 // var_dump($artikelID);
 // var_dump($_SESSION['artikel']['artikel_id']);
-
+var_dump( $_SESSION );
  ?>
 
  <!doctype html>
@@ -61,8 +61,8 @@ $_SESSION['artikel']['artikel_id'] = $artikels[$artikelID]['id'];
         	<label for="kernwoorden">Kernwoorden</label>
         	<input id="kernwoorden" name="kernwoorden" type="text" value="<?=( isset($_POST['kernwoorden']) ? $_POST['kernwoorden'] : $artikels[$artikelID]['kernwoorden']  ) ?>"></input>
  
-        	<label for="datum">Datum  (jjjj-mm-dd)</label>
-        	<input id="datum" name="datum" type="date" ></input> 
+        	<label for="datum">Datum</label>
+        	<input id="datum" name="datum" type="date" value="<?=( isset($_POST['datum']) ? $_POST['datum'] : $artikels[$artikelID]['datum']  ) ?>"></input> 
 
         	<input id="submit" name="submit" type="submit" value="wijziging opslaan"></input>
 

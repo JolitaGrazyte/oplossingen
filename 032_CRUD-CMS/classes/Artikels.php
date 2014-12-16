@@ -19,8 +19,8 @@ class Artikels{
 
     public static function createArtikel($msqlConn, $valToBind){
 
-            $queryStr = 'INSERT INTO artikels (title, artikel, kernwoorden)
-                         VALUES (:title, :artikel, :kernwoorden)';
+            $queryStr = 'INSERT INTO artikels (title, artikel, kernwoorden, datum)
+                         VALUES (:title, :artikel, :kernwoorden, :datum)';
     
             $isSubmited = $msqlConn->update( $queryStr, $valToBind );
 
@@ -34,7 +34,8 @@ class Artikels{
 
                      SET    title       = :title, 
                             artikel     = :artikel, 
-                            kernwoorden = :kernwoorden
+                            kernwoorden = :kernwoorden,
+                            datum       = :datum 
 
                      WHERE  id = :artikelID';
     

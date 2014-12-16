@@ -15,12 +15,18 @@ class MsqlConnect
     public function query($queryString, $valuesToBind){
 
         $statement = $this->msqlLink->prepare($queryString);
- 
-        $statement->execute($valuesToBind);
+
+        // $statement->execute($valuesToBind);
+
+        foreach ($valuesToBind as $key => $value) {
+            $statement->bindValue( $key, $value );
+        }
+
+        $statement->execute();    
+        
 
         return $this->fetchResult($statement);
     }
-
 
 
     public function update($queryString, $valuesToBind){

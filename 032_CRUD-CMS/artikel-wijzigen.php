@@ -18,6 +18,12 @@ if (isset($_POST['submit'])) {
 
 	}
 	else{
+			// $_SESSION['timestamp'] = $timestamp;
+
+			$timestamp = mktime( $_POST['date'] );
+			$datum = date("Y-m-j, g:i:s", $timestamp);
+			$_SESSION['datum'] = $datum;
+
 			$msqlConn = new MsqlConnect( 'CRUD_CMS', 'jolita', 'zN6br4fLYVJ8pSNy');
 
 			$valToBind = array(	
@@ -25,8 +31,8 @@ if (isset($_POST['submit'])) {
 							':title' 		=> $_POST['title'], 
 							':artikel' 		=> $_POST['artikel'], 
 							':kernwoorden' 	=> $_POST['kernwoorden'],
-							':artikelID'	=> $_SESSION['artikel']['artikel_id']
-							//':datum'		=> $_POST['date']
+							':artikelID'	=> $_SESSION['artikel']['artikel_id'],
+							':datum'		=> $datum
 						);
 
 

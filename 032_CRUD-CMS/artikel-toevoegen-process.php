@@ -6,6 +6,8 @@ function __autoload($classname) {
     include_once ('./classes/'. $classname .'.php');
 }
 
+$datum = false;
+$timestamp = false;
 
 if (isset($_POST['submit'])) {
 
@@ -19,15 +21,20 @@ if (isset($_POST['submit'])) {
 
 	}
 	else{
-	
+			
+			// $_SESSION['timestamp'] = $timestamp;
+
+			$timestamp = mktime( $_POST['date'] );
+			$datum = date("Y-m-j, g:i:s", $timestamp);
+			$_SESSION['datum'] = $datum;
+
 			$valToBind = array(	
 	
 							':title' 		=> $_POST['title'], 
 							':artikel' 		=> $_POST['artikel'], 
 							':kernwoorden' 	=> $_POST['kernwoorden'],
-							//':datum'		=> $_POST['date']
+							':datum'		=> $datum
 						);
-
 			
 
 		try {
@@ -36,7 +43,7 @@ if (isset($_POST['submit'])) {
 
             $isSubmited = Artikels::createArtikel( $msqlConn, $valToBind );
     
-            if ($isSubmited[0]) {
+            if ( $isSubmited[0] ) {
     
                 Message::setMessage ( "Het artikel werd succesvol toegevoegd.", 'success' );
                 Header('Location: artikels-overzicht.php');

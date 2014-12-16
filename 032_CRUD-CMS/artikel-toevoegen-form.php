@@ -17,7 +17,7 @@ if (isset($_GET['session'])) {
         Header('Location: artikel-toevoegen-form.php');
     }
 }
-
+var_dump( $_SESSION );
  ?>
 
 <!doctype html>
@@ -61,7 +61,7 @@ if (isset($_GET['session'])) {
         	<label for="kernwoorden">Kernwoorden</label>
         	<input id="kernwoorden" name="kernwoorden" type="text"></input>
  
-        	<label for="datum">Datum  (jjjj-mm-dd)</label>
+        	<label for="datum">Datum</label>
         	<input id="datum" name="datum" type="date" ></input> 
 
         	<input id="submit" name="submit" type="submit" value="artikel toevoegen"></input>
