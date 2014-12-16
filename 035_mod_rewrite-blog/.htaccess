@@ -1,0 +1,16 @@
+RewriteEngine On
+
+
+#RewriteRule artikels/zoeken/([^/\.]+)/?$ artikel-zoeken-redirect.php?datum=$1
+#RewriteRule artikels/$2/([^/\.]+)/?$ artikel-zoeken-redirect.php?query-content=$1&btn_search=$2
+
+RewriteRule zoeken/$ artikel-zoeken.php
+RewriteRule artikels/$ artikels-overzicht.php
+RewriteRule toevoegen/$ artikel-toevoegen-form.php
+RewriteRule toevoegen/confirm/$ artikel-toevoegen.php
+
+
+
+# TODO:
+# zoeken rewrite
+# basePATH 
