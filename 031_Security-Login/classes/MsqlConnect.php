@@ -18,7 +18,7 @@ class MsqlConnect
         $statement = $this->msqlLink->prepare( $queryString );
         
         foreach ($valuesToBind as $key => $value) {
-            $statement->bindParam( $key, $value );
+            $statement->bindValue( $key, $value );
         }
 
         $statement->execute();
