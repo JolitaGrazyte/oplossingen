@@ -1,0 +1,120 @@
+html{
+	font-family: sans-serif;
+}
+
+header, footer{
+	position: fixed;
+	width: 100%;
+	left: 0;
+	background-color: black;
+	color: #f6f6f6;
+}
+
+header{
+	top: 0;
+	height: 3.7rem;
+
+}
+section{
+	margin: 2rem 1rem;
+}
+
+footer{
+
+	text-align: center;
+	bottom: 0;
+	
+}
+nav a:link, nav a:visited, 
+[class="homeLink"] a:link, 
+[class="homeLink"] a:visited {
+	color: #f6f6f6;
+	  
+}
+
+nav ul li{
+	display: inline-block;
+	margin-right: 1rem;
+}
+nav{
+	float: right;
+}
+
+nav, .homeLink{
+	line-height: 1.3rem;
+}
+.homeLink{
+	float: left;
+	margin: 1rem 1.4rem; 
+}
+
+.todos{
+	display: block;
+}
+
+form{
+	display: block;
+	margin-left: 1.4rem;
+}
+form input{
+	width: 14rem;
+	line-height: 1rem;
+}
+
+.message{
+	width: 98%;
+	border-radius: 5px;
+	line-height: 1.5rem;
+	padding: 4px;
+	padding-left: 1.2rem;
+}
+
+.success{
+	border: 1px solid #8ebf9f;
+	background-color: #ccf9cc;
+	color: grey;
+
+}
+
+.error{
+	border: 1px solid #f53953;
+	background-color: pink;
+	color: #f53953;
+}
+li{
+	list-style: none;
+}
+.icon{
+	padding-right: .8rem;
+	display: inline-block;
+	width: .8rem;
+	height: 1rem;
+	background-size: .8rem .8rem;
+}
+
+.activate{
+	
+	background-image: url(http://oplossingen.web-backend.local/todoApp_Laravel/public/files/check.png);
+	background-repeat: no-repeat;
+}
+.delete{
+	margin-left: .5rem;
+	background-image: url(http://oplossingen.web-backend.local/todoApp_Laravel/public/files/delete.png);
+	background-repeat: no-repeat;
+}
+.inputerror{
+	font-size: .7rem;
+	font-style: oblique;
+	color: #af0000;
+}
+
+.field{
+	padding-bottom: .8rem;
+}
+.item:hover{
+	text-decoration: line-through;
+}
+
+.remember{
+	margin-left: -13rem;
+}

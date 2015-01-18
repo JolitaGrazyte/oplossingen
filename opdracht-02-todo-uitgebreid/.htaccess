@@ -1,0 +1,4 @@
+RewriteEngine On
+
+# Wanneer er aan de regel wordt voldaan, worden er geen verdere rewriterules meer uitgevoerd: [L]ast 
+RewriteRule   ^    todoApp_Laravel/public    [L]
