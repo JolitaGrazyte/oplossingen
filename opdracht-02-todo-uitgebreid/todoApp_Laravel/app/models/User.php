@@ -29,17 +29,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	//get todos of a current user
 	public function todos(){
 
-		return $this->hasMany('Todo', 'user_id')
-					->where( 'status', '=', 0)
-					->where( 'archived', '=', 0 );
-	}
-
-	//get dones of a current user
-	public function dones(){
-
-		return $this->hasMany('Todo', 'user_id')
-					->where( 'status', '=', 1)
-					->where( 'archived', '=', 0 );
+		return $this->hasMany('Todo', 'user_id');
 	}
 
 }

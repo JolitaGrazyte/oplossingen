@@ -7,9 +7,17 @@ class TodoController extends BaseController {
 
 		if ( Auth::check() ) {
 
-			$todos = Auth::user()->todos;
+			$todos = Auth::user()
+					->todos()
+					->where( 'status', '=', 0)
+					->where( 'archived', '=', 0 )
+					->get();
 
-			$dones = Auth::user()->dones;
+			$dones = Auth::user()
+					->todos()
+					->where( 'status', '=', 1)
+					->where( 'archived', '=', 0 )
+					->get();
 
 			$todosArr = $todos->toArray();
 			$donesArr = $dones->toArray();
